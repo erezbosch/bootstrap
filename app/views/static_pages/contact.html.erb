@@ -1,1 +1,64 @@
 <h1>Contact!</h1>
+<div class="row">
+  <div class="col-xs-6">
+    <form action=<%=contact_url%> method="post">
+      <div class="form-group">
+        <label for="contact_name">Full name</label>
+        <input type="text"
+               name="contact[name]"
+               id="contact_name"
+               class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="contact_email">Email Address</label>
+        <input type="text"
+               name="contact[email]"
+               id="contact_email"
+               class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="contact_subject">Subject</label>
+        <select name="contact[subject]" id="contact_subject" class="form-control">
+          <% ["General", "Sales", "Troubleshooting"].each do |subj| %>
+            <option id="contact_subject_<%=subj%>" value=<%=subj%>><%=subj%>
+            </option>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="contact[message]"
+                  id="contact_message"
+                  class="form-control">
+        </textarea>
+      </div>
+
+      <input type="button" value="Submit" class="btn btn-primary">
+    </form>
+  </div>
+  <div class="col-xs-6">
+    <h2>Staff Table</h2>
+    <table class="table-striped">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Phone Number</th>
+          <th>Email Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% 10.times do %>
+          <tr>
+            <% name = Faker::Name.name %>
+            <td><%= name %></td>
+            <td><%= Faker::PhoneNumber.phone_number %></td>
+            <td><%= Faker::Internet.free_email(name) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -25,6 +25,8 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 
 gem 'bootstrap-sass'
 
+gem 'faker'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
