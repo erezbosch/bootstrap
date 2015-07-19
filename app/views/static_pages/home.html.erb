@@ -1,5 +1,5 @@
 <div class="row text-center">
-  <h1>Home!</h1>
+  <h1>Welcome to Genericorp</h1>
 </div>
 <div class="row">
   <div class="col-xs-6 col-xs-offset-3">
@@ -16,7 +16,7 @@
           <div class="<%= num == 0 ? "item active" : "item"%> image-center">
             <%= image_tag "#{num + 1}.jpg" %>
             <div class="carousel-caption">
-              <%= Faker::Hacker.say_something_smart %>
+              <%= Faker::Company.catch_phrase %>
             </div>
           </div>
         <% end %>
@@ -32,7 +32,7 @@
 <% 5.times do %>
 <div class="row">
   <div class="col-xs-6 col-xs-offset-3">
-    <h2><%= Faker::Lorem.words(4).join(" ").capitalize %></h2>
+    <h2><%= Faker::Company.bs %></h2>
     <p><%= Faker::Lorem.paragraph %></p>
   </div>
 </div>
