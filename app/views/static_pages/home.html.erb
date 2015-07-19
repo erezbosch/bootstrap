@@ -1,1 +1,39 @@
-<h1>Home!</h1>
+<div class="row text-center">
+  <h1>Home!</h1>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+        <% 4.times do |num| %>
+          <div class="<%= num == 0 ? "item active" : "item"%> image-center">
+            <%= image_tag "#{num + 1}.jpg" %>
+            <div class="carousel-caption">
+              <%= Faker::Hacker.say_something_smart %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <a class="left carousel-control" href="#carousel" role="button"
+         data-slide="prev">Previous</a>
+      <a class="right carousel-control" href="#carousel" role="button"
+         data-slide="next">Next</a>
+    </div>
+  </div>
+</div>
+<% 5.times do %>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <h2><%= Faker::Lorem.words(4).join(" ").capitalize %></h2>
+    <p><%= Faker::Lorem.paragraph %></p>
+  </div>
+</div>
+<% end %>
