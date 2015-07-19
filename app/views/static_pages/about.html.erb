@@ -1,1 +1,25 @@
-<h1>About!</h1>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-xs-6">
+      <h1>About page!</h1>
+    </div>
+    <div class="col-xs-6">
+      <h1>Information!</h1>
+    </div>
+  </div>
+</div>
+<h1>Meet the team!</h1>
+<div class="row text-center">
+  <% ["https://s-media-cache-ak0.pinimg.com/236x/44/15/a7/4415a7f2e4c4d9ababf0fc2ff552978e.jpg",
+      "https://s-media-cache-ak0.pinimg.com/236x/b8/45/44/b845440decb4eef765257ed1dd039247.jpg",
+      "https://s-media-cache-ak0.pinimg.com/236x/0d/e0/fa/0de0fa348a5d9b9e2e220116bf30b7a2.jpg",
+      "http://www.nsmbl.com/wp-content/uploads/2013/03/angry-baby-animals5.jpg"]
+      .each do |url| %>
+    <div class="col-xs-3">
+      <img src=<%= url %> class="img-circle">
+      <h2><%= Faker::Name.name %></h2>
+      <p><%= Faker::Lorem.paragraph %></p>
+    </div>
+  <% end %>
+  </div>
+</div>
